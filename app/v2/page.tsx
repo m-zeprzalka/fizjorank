@@ -120,16 +120,16 @@ export default function Home() {
                                 className={`group bg-white rounded-2xl border p-6 transition-all hover:border-blue-300 hover:shadow-md flex flex-col lg:flex-row gap-8 ${cardBorder}`}
                             >
                                 {/* Kolumna 1: Informacje Główne */}
-                                <div className="flex-1 flex gap-5">
+                                <div className="flex-1 flex flex-col sm:flex-row gap-3 sm:gap-5">
                                     {/* Piktogram / Numer */}
-                                    <div className="flex flex-col items-center gap-2">
+                                    <div className="flex flex-row sm:flex-col items-center sm:items-center gap-2">
                                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-semibold text-lg border border-slate-100 ${rankBadge}`}>
                                             {center.id}
                                         </div>
                                         {isGold && <Award className={`w-5 h-5 ${rankIconColor}`} />}
                                     </div>
 
-                                    <div className="pt-1">
+                                    <div className="sm:pt-1">
                                         <div className="flex items-center gap-3 mb-1">
                                             <h3 className="text-xl font-semibold text-slate-900 tracking-tight">
                                                 {center.name}
