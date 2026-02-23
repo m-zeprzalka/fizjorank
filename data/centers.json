@@ -1,0 +1,360 @@
+[
+    {
+        "id": 1,
+        "name": "Ośrodek Intensywnej Rehabilitacji Dzieci OLINEK",
+        "rating": 4.9,
+        "reviewCount": 842,
+        "address": "Mokotów, ul. Bobrowiecka 9",
+        "tags": [
+            "NDT-Bobath",
+            "Kombinezony TheraSuit",
+            "Integracja Sensoryczna"
+        ],
+        "pros": [
+            "Najnowocześniejszy sprzęt w Polsce",
+            "Wysoko wykwalifikowana kadra",
+            "Intensywne turnusy rehabilitacyjne"
+        ],
+        "isPromoted": true,
+        "url": "https://olinek.com.pl"
+    },
+    {
+        "id": 2,
+        "name": "Centrum Rehabilitacji Dziecięcej AMICUS (Fundacja Zdążyć z Pomocą)",
+        "rating": 4.8,
+        "reviewCount": 615,
+        "address": "Żoliborz, ul. Słowackiego 12",
+        "tags": [
+            "Metoda Vojty",
+            "NDT-Bobath",
+            "Terapia Ręki"
+        ],
+        "pros": [
+            "Ogromne doświadczenie",
+            "Kompleksowa opieka wielospecjalistyczna",
+            "Dofinansowania dla podopiecznych"
+        ],
+        "isPromoted": true,
+        "url": "#"
+    },
+    {
+        "id": 3,
+        "name": "Paley European Institute - Oddział Dziecięcy",
+        "rating": 4.9,
+        "reviewCount": 320,
+        "address": "Wilanów, al. Rzeczypospolitej 1",
+        "tags": [
+            "Rehabilitacja pooperacyjna",
+            "Wady wrodzone",
+            "Fizjoterapia ortopedyczna"
+        ],
+        "pros": [
+            "Światowej klasy specjaliści",
+            "Indywidualne protokoły leczenia",
+            "Nowoczesna infrastruktura"
+        ],
+        "isPromoted": true,
+        "url": "#"
+    },
+    {
+        "id": 4,
+        "name": "Centrum Terapii BIOMICUS",
+        "rating": 4.8,
+        "reviewCount": 410,
+        "address": "Śródmieście, ul. Dzielna 64",
+        "tags": [
+            "Logopedia",
+            "Integracja Sensoryczna",
+            "Fizjoterapia"
+        ],
+        "pros": [
+            "Holistyczne podejście do dziecka",
+            "Zajęcia grupowe i indywidualne"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 5,
+        "name": "FizjoKids Warszawa",
+        "rating": 4.7,
+        "reviewCount": 189,
+        "address": "Ursynów, ul. KEN 36",
+        "tags": [
+            "Fizjoterapia niemowląt",
+            "Trójpłaszczyznowa Terapia Stóp",
+            "NDT-Bobath"
+        ],
+        "pros": [
+            "Przyjazna, domowa atmosfera",
+            "Szybkie terminy wizyt patronażowych"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 6,
+        "name": "Instytut Matki i Dziecka - Zakład Usprawniania Leczniczego",
+        "rating": 4.6,
+        "reviewCount": 530,
+        "address": "Wola, ul. Kasprzaka 17a",
+        "tags": [
+            "Rehabilitacja neurologiczna",
+            "Wady postawy",
+            "Wcześniaki"
+        ],
+        "pros": [
+            "Wielka renoma placówki państwowej",
+            "Doświadczenie z trudnymi przypadkami"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 7,
+        "name": "Centrum Rehabilitacji Dzieci CEMICUS",
+        "rating": 4.7,
+        "reviewCount": 290,
+        "address": "Ochota, ul. Grójecka 22",
+        "tags": [
+            "Terapia PNF",
+            "Kinezyterapia",
+            "Masaż Shantala"
+        ],
+        "pros": [
+            "Innowacyjne metody terapii",
+            "Świetny kontakt terapeutów z dziećmi"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 8,
+        "name": "Rehmedis Kids",
+        "rating": 4.8,
+        "reviewCount": 145,
+        "address": "Bielany, ul. Kasprowicza 119",
+        "tags": [
+            "Skoliozy",
+            "Wady postawy",
+            "Metoda FITS"
+        ],
+        "pros": [
+            "Specjalizacja w wadach postawy starszych dzieci",
+            "Zajęcia profilaktyczne"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 9,
+        "name": "Sensorio - Centrum Terapii Dziecięcej",
+        "rating": 4.6,
+        "reviewCount": 95,
+        "address": "Praga-Południe, ul. Ostrobramska 101",
+        "tags": [
+            "Integracja Sensoryczna (SI)",
+            "Terapia Ręki",
+            "Trening Umiejętności Społecznych"
+        ],
+        "pros": [
+            "Doskonale wyposażone sale do SI",
+            "Cierpliwi terapeuci"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 10,
+        "name": "Fizjo-Smyk",
+        "rating": 4.9,
+        "reviewCount": 88,
+        "address": "Białołęka, ul. Światowida 49",
+        "tags": [
+            "Ocena rozwoju niemowląt",
+            "Asymetrie",
+            "Kręcz szyi"
+        ],
+        "pros": [
+            "Idealne dla noworodków",
+            "Bardzo szczegółowy instruktaż dla rodziców"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 11,
+        "name": "Centrum Zdrowia Dziecka (Klinika Rehabilitacji)",
+        "rating": 4.5,
+        "reviewCount": 920,
+        "address": "Wawer, Aleja Dzieci Polskich 20",
+        "tags": [
+            "Rehabilitacja szpitalna",
+            "Choroby rzadkie",
+            "Neurologia dziecięca"
+        ],
+        "pros": [
+            "Najwyższy stopień referencyjności medycznej",
+            "Pomoc w najcięższych schorzeniach"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 12,
+        "name": "NeuroKrok",
+        "rating": 4.7,
+        "reviewCount": 112,
+        "address": "Włochy, ul. 1 Sierpnia 36",
+        "tags": [
+            "Metoda Vojty",
+            "Zaburzenia napięcia mięśniowego"
+        ],
+        "pros": [
+            "Kameralnie i bez stresu",
+            "Terapeuci z certyfikatami IVG"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 13,
+        "name": "Dziecięce Centrum Terapii KAMYK",
+        "rating": 4.6,
+        "reviewCount": 76,
+        "address": "Targówek, ul. Radzymińska 250",
+        "tags": [
+            "Fizjoterapia",
+            "Psycholog dziecięcy",
+            "Logopeda"
+        ],
+        "pros": [
+            "Współpraca wielu specjalistów w jednym miejscu",
+            "Bezpłatny parking"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 14,
+        "name": "Pro-Fizjo Dzieci",
+        "rating": 4.8,
+        "reviewCount": 134,
+        "address": "Bemowo, ul. Powstańców Śląskich 104",
+        "tags": [
+            "Gimnastyka korekcyjna",
+            "Terapia czaszkowo-krzyżowa"
+        ],
+        "pros": [
+            "Autorskie programy ćwiczeń",
+            "Nowoczesny sprzęt do biofeedbacku"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 15,
+        "name": "Terapeutyczna Przystań",
+        "rating": 4.7,
+        "reviewCount": 65,
+        "address": "Ursus, ul. Skoroszewska 5",
+        "tags": [
+            "Autyzm",
+            "Zespół Aspergera",
+            "Fizjoterapia wspierająca"
+        ],
+        "pros": [
+            "Doświadczenie z dziećmi w spektrum autyzmu",
+            "Ciche, spokojne gabinety"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 16,
+        "name": "Kraina Zmysłów",
+        "rating": 4.5,
+        "reviewCount": 110,
+        "address": "Praga-Północ, ul. Wileńska 18",
+        "tags": [
+            "Integracja Sensoryczna",
+            "Sala Doświadczania Świata"
+        ],
+        "pros": [
+            "Świetnie zaaranżowana przestrzeń",
+            "Terapia przez zabawę"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 17,
+        "name": "Bobath-Med",
+        "rating": 4.9,
+        "reviewCount": 54,
+        "address": "Żoliborz, ul. Rydygiera 15",
+        "tags": [
+            "NDT-Bobath Baby",
+            "Wcześniaki",
+            "Opóźnienia psychoruchowe"
+        ],
+        "pros": [
+            "Terapia w środowisku domowym",
+            "Skupienie na najmłodszych (0-2 lata)"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 18,
+        "name": "Fizjo-Pediatria Warszawa",
+        "rating": 4.6,
+        "reviewCount": 89,
+        "address": "Mokotów, ul. Puławska 111",
+        "tags": [
+            "Fizjoterapia oddechowa",
+            "Mukowiscydoza",
+            "Astma"
+        ],
+        "pros": [
+            "Unikalna specjalizacja oddechowa",
+            "Szkolenia dla rodziców z drenażu"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 19,
+        "name": "Terapia Małego Człowieka",
+        "rating": 4.7,
+        "reviewCount": 77,
+        "address": "Wawer, ul. Patriotów 300",
+        "tags": [
+            "Terapia Neurotaktylna",
+            "Odruchy INPP"
+        ],
+        "pros": [
+            "Zlokalizowany blisko lasu, czyste powietrze",
+            "Innowacyjne podejście neurologiczne"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    },
+    {
+        "id": 20,
+        "name": "Dzielny Pacjent - Gabinet Fizjoterapii",
+        "rating": 4.8,
+        "reviewCount": 42,
+        "address": "Wesoła, ul. Trakt Brzeski 50",
+        "tags": [
+            "Kinesiotaping w pediatrii",
+            "Terapia narzędziowa"
+        ],
+        "pros": [
+            "Brak kolejek i długiego oczekiwania",
+            "Indywidualne podejście jeden na jeden"
+        ],
+        "isPromoted": false,
+        "url": "#"
+    }
+]
