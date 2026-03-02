@@ -1,162 +1,279 @@
+"use client";
+
+import { useState } from 'react';
 import centersData from '@/data/centers.json';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Star, MapPin, CheckCircle2, Trophy, ArrowRight, ShieldCheck } from "lucide-react";
+import {
+  Star,
+  MapPin,
+  Search,
+  Stethoscope,
+  Activity,
+  ShieldCheck,
+  ChevronRight,
+  Check,
+  Award,
+  BookOpen
+} from "lucide-react";
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredCenters = centersData.filter(center => {
+    const searchString = `${center.name} ${center.address} ${center.tags.join(' ')} ${center.pros.join(' ')}`.toLowerCase();
+    return searchString.includes(searchQuery.toLowerCase());
+  });
+
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 font-sans selection:bg-blue-200">
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100">
 
-      {/* HERO SECTION */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50/50 to-white pt-24 pb-20 px-4">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-400/20 blur-[120px] rounded-full pointer-events-none" />
+      {/* HEADER / NAVIGATION (Minimalist) */}
+      <nav className="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Activity className="text-blue-600 w-6 h-6" />
+            <span className="font-semibold text-xl tracking-tight text-slate-900">FizjoRank<span className="text-blue-600">.</span></span>
+          </div>
+          <div className="hidden md:flex gap-6 text-sm font-medium text-slate-500">
+            <a href="#" className="hover:text-slate-900 transition-colors">Ranking</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Baza Wiedzy</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Dla Specjalistów</a>
+          </div>
+          <Button variant="outline" className="rounded-full text-sm font-medium border-slate-200">
+            Zgłoś placówkę
+          </Button>
+        </div>
+      </nav>
 
-        <div className="relative max-w-4xl mx-auto text-center">
-          <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 border-none px-4 py-1.5 rounded-full mb-6 text-sm font-medium shadow-sm transition-all">
-            ✨ Aktualizacja: Luty 2026
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-slate-900 leading-[1.1]">
-            Znajdź najlepszą <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-              rehabilitację dla dziecka
-            </span>
+      {/* HERO SECTION - Clinical & Clean */}
+      <header className="bg-slate-50/50 pt-20 pb-16 px-6 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-8">
+            <ShieldCheck className="w-4 h-4" />
+            Zweryfikowane Medycznie · 2026
+          </div>
+          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 mb-6 leading-[1.15]">
+            Znajdź sprawdzoną <br className="hidden md:block" />
+            <span className="text-blue-600">rehabilitację</span> dla dziecka
           </h1>
-          <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Niezależny ranking 20 najlepszych warszawskich ośrodków. Oparty na opiniach rodziców, certyfikatach i doświadczeniu terapeutów.
+          <p className="text-lg text-slate-500 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+            Obiektywny ranking warszawskich placówek oparty na kwalifikacjach terapeutów, certyfikatach medycznych i zweryfikowanych opiniach pacjentów.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button size="lg" className="rounded-full px-8 h-14 text-lg bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all hover:-translate-y-1">
-              Zobacz Ranking wyników
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 h-14 text-lg border-slate-200 hover:bg-slate-50 transition-all">
-              Zgłoś swój ośrodek
-            </Button>
+
+          {/* MED-TECH SEARCH BAR */}
+          <div className="max-w-2xl mx-auto relative">
+            <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
+              <Search className="w-5 h-5 text-slate-400" />
+            </div>
+            <input
+              type="text"
+              placeholder="Szukaj metody, schorzenia lub dzielnicy (np. NDT-Bobath, Mokotów)..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-14 pr-6 py-4 rounded-2xl border border-slate-200 bg-white text-base focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all shadow-sm"
+            />
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* METODOLOGIA */}
-      <section className="max-w-5xl mx-auto px-4 -mt-8 relative z-10 mb-16">
-        <div className="bg-white/80 backdrop-blur-xl border border-white/40 shadow-xl shadow-slate-200/50 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-              <ShieldCheck className="text-emerald-600 w-6 h-6" />
-            </div>
-            <div>
-              <h3 className="font-bold text-slate-900 text-lg">Weryfikujemy jakość</h3>
-              <p className="text-slate-500 text-sm">Sprawdzamy certyfikaty (NDT-Bobath, Vojta) i realne opinie z Google.</p>
-            </div>
-          </div>
-          <div className="h-12 w-px bg-slate-200 hidden md:block" />
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center flex-shrink-0">
-              <Star className="text-amber-600 w-6 h-6" />
-            </div>
-            <div>
-              <h3 className="font-bold text-slate-900 text-lg">100% Obiektywizmu</h3>
-              <p className="text-slate-500 text-sm">Nasz ranking opiera się na twardych danych i zadowoleniu pacjentów.</p>
-            </div>
-          </div>
+      {/* MAIN CONTENT - Directory Style */}
+      <main className="max-w-6xl mx-auto px-6 py-12">
+
+        <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-100">
+          <h2 className="text-2xl font-semibold text-slate-900 tracking-tight">
+            Wyniki rankingu
+          </h2>
+          <span className="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full">
+            {filteredCenters.length} placówek
+          </span>
         </div>
-      </section>
 
-      {/* RANKING LIST */}
-      <main className="max-w-5xl mx-auto px-4 pb-24">
-        <div className="space-y-6">
-          {centersData.map((center) => (
-            <div
-              key={center.id}
-              className={`relative group bg-white rounded-3xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${center.isPromoted
-                  ? 'border-2 border-amber-300/50 shadow-xl shadow-amber-500/10 bg-gradient-to-br from-white to-amber-50/30'
-                  : 'border border-slate-100 shadow-lg shadow-slate-200/40'
-                }`}
-            >
-              {/* Odznaka Wyróżnienia */}
-              {center.isPromoted && (
-                <div className="absolute -top-3 right-6 bg-gradient-to-r from-amber-400 to-orange-400 text-white text-xs font-black uppercase tracking-wider px-4 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                  <Trophy className="w-3.5 h-3.5" /> Polecany Ośrodek
-                </div>
-              )}
+        <div className="space-y-4">
+          {filteredCenters.map((center) => {
+            // Subtelne oznaczenia podium (Med-Tech Style)
+            const isGold = center.id === 1;
+            const isSilver = center.id === 2;
+            const isBronze = center.id === 3;
 
-              <div className="flex flex-col md:flex-row gap-6 md:gap-8">
+            let cardBorder = 'border-slate-200';
+            let rankBadge = 'text-slate-400 bg-slate-50';
+            let rankIconColor = 'text-slate-400';
 
-                {/* Lewa Kolumna */}
-                <div className="flex-1">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className={`flex items-center justify-center w-14 h-14 rounded-2xl font-black text-2xl flex-shrink-0 shadow-inner ${center.id === 1 ? 'bg-gradient-to-br from-yellow-300 to-amber-500 text-white' :
-                        center.id === 2 ? 'bg-gradient-to-br from-slate-300 to-slate-400 text-white' :
-                          center.id === 3 ? 'bg-gradient-to-br from-orange-300 to-orange-400 text-white' :
-                            'bg-slate-100 text-slate-500'
-                      }`}>
-                      #{center.id}
+            if (isGold) {
+              cardBorder = 'border-blue-600 shadow-md shadow-blue-900/5 ring-1 ring-blue-600';
+              rankBadge = 'text-blue-700 bg-blue-50';
+              rankIconColor = 'text-blue-600';
+            } else if (isSilver) {
+              cardBorder = 'border-slate-300 shadow-sm';
+              rankBadge = 'text-slate-700 bg-slate-100';
+              rankIconColor = 'text-slate-500';
+            } else if (isBronze) {
+              cardBorder = 'border-amber-200 shadow-sm';
+              rankBadge = 'text-amber-800 bg-amber-50';
+              rankIconColor = 'text-amber-600';
+            }
+
+            return (
+              <div
+                key={center.id}
+                className={`group bg-white rounded-2xl border p-6 transition-all hover:border-blue-300 hover:shadow-md flex flex-col lg:flex-row gap-8 ${cardBorder}`}
+              >
+                {/* Kolumna 1: Informacje Główne */}
+                <div className="flex-1 flex flex-col sm:flex-row gap-3 sm:gap-5">
+                  {/* Piktogram / Numer */}
+                  <div className="flex flex-row sm:flex-col items-center sm:items-center gap-2">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center font-semibold text-lg border border-slate-100 ${rankBadge}`}>
+                      {center.id}
+                    </div>
+                    {isGold && <Award className={`w-5 h-5 ${rankIconColor}`} />}
+                  </div>
+
+                  <div className="sm:pt-1">
+                    <div className="flex items-center gap-3 mb-1">
+                      <h3 className="text-xl font-semibold text-slate-900 tracking-tight">
+                        {center.name}
+                      </h3>
+                      {center.isPromoted && (
+                        <span className="hidden sm:inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2 py-0.5 rounded-sm">
+                          Rekomendacja
+                        </span>
+                      )}
                     </div>
 
-                    <div className="pt-1">
-                      <h2 className="text-2xl font-bold text-slate-900 mb-2 leading-tight pr-4 group-hover:text-blue-600 transition-colors">
-                        {center.name}
-                      </h2>
-                      <div className="flex flex-wrap items-center gap-4 text-sm font-medium">
-                        <div className="flex items-center gap-1 bg-amber-50 text-amber-700 px-2 py-1 rounded-lg">
-                          <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                          {center.rating} <span className="opacity-70">({center.reviewCount})</span>
-                        </div>
-                        <div className="flex items-center gap-1.5 text-slate-500 bg-slate-50 px-2 py-1 rounded-lg">
-                          <MapPin className="w-4 h-4 text-slate-400" />
-                          {center.address}
-                        </div>
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-4 font-medium">
+                      <div className="flex items-center gap-1.5">
+                        <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                        <span className="text-slate-700">{center.rating}</span>
+                        <span className="text-slate-400 font-normal">({center.reviewCount} opinii)</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <MapPin className="w-4 h-4 text-slate-400" />
+                        {center.address}
                       </div>
                     </div>
-                  </div>
 
-                  <div className="flex flex-wrap gap-2 mt-6 ml-0 md:ml-18">
-                    {center.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-100">
-                        {tag}
-                      </span>
-                    ))}
+                    <div className="flex flex-wrap gap-2">
+                      {center.tags.map(tag => (
+                        <span key={tag} className="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-medium rounded-md border border-slate-200">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
-                {/* Prawa Kolumna */}
-                <div className="md:w-72 flex flex-col justify-between bg-slate-50/50 rounded-2xl p-5 border border-slate-100">
-                  <ul className="space-y-3 mb-6">
+                {/* Kolumna 2: Atuty (Clinical style) */}
+                <div className="lg:w-72 flex flex-col justify-center border-t lg:border-t-0 lg:border-l border-slate-100 pt-5 lg:pt-0 lg:pl-8">
+                  <ul className="space-y-2.5 mb-6">
                     {center.pros.map((pro, index) => (
-                      <li key={index} className="flex items-start gap-2.5 text-sm text-slate-600 font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
+                      <li key={index} className="flex items-start gap-2.5 text-sm text-slate-600">
+                        <Check className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0 stroke-[3]" />
                         <span className="leading-snug">{pro}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <a href={center.url} target="_blank" rel="noopener noreferrer" className="mt-auto">
+                  <a href={center.url} target="_blank" rel="noopener noreferrer">
                     <Button
-                      className={`w-full rounded-xl h-11 font-semibold transition-all group-hover:shadow-md ${center.isPromoted
-                          ? "bg-amber-500 hover:bg-amber-600 text-white shadow-amber-500/20 border-none"
-                          : "bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 shadow-sm"
+                      variant="ghost"
+                      className={`w-full justify-between h-12 px-4 rounded-xl border font-medium transition-all ${isGold
+                        ? 'bg-blue-600 text-white hover:bg-blue-700 border-blue-600 hover:bg-slate-50'
+                        : 'bg-white text-slate-900 border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                         }`}
                     >
-                      Sprawdź ofertę <ArrowRight className="w-4 h-4 ml-2" />
+                      Profil placówki <ChevronRight className="w-4 h-4 text-current opacity-70" />
                     </Button>
                   </a>
                 </div>
-
               </div>
+            );
+          })}
+
+          {filteredCenters.length === 0 && (
+            <div className="text-center py-20 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+              <Stethoscope className="w-10 h-10 text-slate-300 mx-auto mb-4" />
+              <p className="text-lg text-slate-600 font-medium mb-4">Brak wyników w naszej bazie.</p>
+              <Button variant="outline" onClick={() => setSearchQuery("")} className="bg-white">
+                Wróć do pełnej listy
+              </Button>
             </div>
-          ))}
+          )}
         </div>
       </main>
 
-      {/* FOOTER */}
-      <footer className="bg-white border-t border-slate-200 text-slate-500 py-12 text-center px-4">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <p className="font-bold text-slate-900 text-xl tracking-tight">FizjoRank.pl</p>
-          <div className="flex justify-center gap-6 text-sm font-medium">
-            <a href="#" className="hover:text-blue-600 transition-colors">Polityka Prywatności</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">Regulamin</a>
-            <a href="#" className="hover:text-blue-600 transition-colors">Dla Właścicieli Ośrodków</a>
+      {/* BAZA WIEDZY - Clean & Authoritative */}
+      <section className="bg-slate-50 py-20 border-t border-slate-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+            <div>
+              <div className="flex items-center gap-2 text-blue-600 font-semibold text-sm uppercase tracking-wider mb-2">
+                <BookOpen className="w-4 h-4" /> Edukacja
+              </div>
+              <h2 className="text-3xl font-semibold text-slate-900 tracking-tight">Baza Wiedzy Rodzica</h2>
+            </div>
+            <Button variant="link" className="text-blue-600 px-0 hover:text-blue-700">
+              Zobacz wszystkie artykuły <ChevronRight className="w-4 h-4 ml-1" />
+            </Button>
           </div>
-          <p className="text-xs max-w-2xl mx-auto opacity-70 pt-6 border-t border-slate-100 leading-relaxed">
-            Ranking ma charakter wyłącznie informacyjny i nie zastępuje profesjonalnej porady medycznej. Zawsze konsultuj stan zdrowia swojego dziecka z wykwalifikowanym lekarzem.
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                category: "Diagnostyka",
+                title: "Kiedy udać się z niemowlakiem do fizjoterapeuty?",
+                desc: "Asymetria, prężenie ciała, trudności w karmieniu. Poznaj wczesne sygnały ostrzegawcze.",
+                time: "5 min czytania"
+              },
+              {
+                category: "Metodologia",
+                title: "NDT-Bobath a Vojta - najważniejsze różnice",
+                desc: "Wyjaśniamy protokoły obu metod rehabilitacji na podstawie najnowszych wytycznych.",
+                time: "8 min czytania"
+              },
+              {
+                category: "Praktyka domowa",
+                title: "Integracja Sensoryczna: ćwiczenia w domu",
+                desc: "Jak wspierać układ nerwowy dziecka w warunkach domowych. Instruktaż dla rodziców.",
+                time: "6 min czytania"
+              }
+            ].map((article, idx) => (
+              <div key={idx} className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-200 transition-all cursor-pointer group shadow-sm hover:shadow-md">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{article.category}</span>
+                  <span className="text-xs text-slate-400">{article.time}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-slate-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6 font-light">
+                  {article.desc}
+                </p>
+                <div className="flex items-center text-sm font-medium text-blue-600 group-hover:translate-x-1 transition-transform">
+                  Czytaj <ChevronRight className="w-4 h-4 ml-0.5" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER - Minimalist */}
+      <footer className="bg-white border-t border-slate-100 py-12 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-2">
+            <Activity className="text-slate-400 w-5 h-5" />
+            <span className="font-semibold text-lg tracking-tight text-slate-900">FizjoRank<span className="text-blue-600">.</span></span>
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-slate-500 font-medium">
+            <a href="#" className="hover:text-slate-900 transition-colors">Polityka Prywatności</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Dla Specjalistów</a>
+            <a href="#" className="hover:text-slate-900 transition-colors">Kontakt</a>
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto mt-8 pt-8 border-t border-slate-50 text-center">
+          <p className="text-xs text-slate-400 leading-relaxed font-light">
+            Ranking ma charakter wyłącznie informacyjny. Wszelkie niepokojące objawy u dziecka należy w pierwszej kolejności konsultować z lekarzem pediatrą lub neurologiem.
           </p>
         </div>
       </footer>
