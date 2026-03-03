@@ -3,7 +3,6 @@
         "id": 1,
         "name": "Ośrodek Intensywnej Rehabilitacji Dzieci OLINEK",
         "rating": 4.9,
-        "reviewCount": 842,
         "address": "ul. Bobrowiecka 9, 00-728 Warszawa",
         "tags": [
             "NDT-Bobath",
@@ -15,13 +14,13 @@
             "Intensywne turnusy rehabilitacyjne"
         ],
         "isPromoted": true,
-        "url": "https://olinek.com.pl"
+        "url": "https://olinek.com.pl",
+        "slug": "osrodek-intensywnej-rehabilitacji-dzieci-olinek"
     },
     {
         "id": 2,
         "name": "Ośrodek Rehabilitacji Amicus (Fundacja Zdążyć z Pomocą)",
         "rating": 4.8,
-        "reviewCount": 615,
         "address": "ul. Słowackiego 12, 01-627 Warszawa",
         "tags": [
             "Metoda Vojty",
@@ -33,13 +32,13 @@
             "Kompleksowa opieka"
         ],
         "isPromoted": true,
-        "url": "https://dzieciom.pl/rehabilitacja/amicus/"
+        "url": "https://dzieciom.pl/rehabilitacja/amicus/",
+        "slug": "osrodek-rehabilitacji-amicus-fundacja-zdazyc-z-pomoca"
     },
     {
         "id": 3,
         "name": "Ośrodek Rehabilitacji Biomicus (Fundacja Zdążyć z Pomocą)",
         "rating": 4.8,
-        "reviewCount": 410,
         "address": "ul. Pańska 96 lok. 201, 00-837 Warszawa",
         "tags": [
             "Logopedia",
@@ -51,13 +50,13 @@
             "Nowoczesne wyposażenie sal"
         ],
         "isPromoted": false,
-        "url": "https://dzieciom.pl/rehabilitacja/biomicus/"
+        "url": "https://dzieciom.pl/rehabilitacja/biomicus/",
+        "slug": "osrodek-rehabilitacji-biomicus-fundacja-zdazyc-z-pomoca"
     },
     {
         "id": 4,
         "name": "Ośrodek Rehabilitacji Cemicus (Fundacja Zdążyć z Pomocą)",
         "rating": 4.7,
-        "reviewCount": 290,
         "address": "ul. Grzybowska 4 lok. 9A, 00-131 Warszawa",
         "tags": [
             "Kinezyterapia",
@@ -69,13 +68,13 @@
             "Dedykowane hostele dla pacjentów"
         ],
         "isPromoted": false,
-        "url": "https://dzieciom.pl/rehabilitacja/cemicus/"
+        "url": "https://dzieciom.pl/rehabilitacja/cemicus/",
+        "slug": "osrodek-rehabilitacji-cemicus-fundacja-zdazyc-z-pomoca"
     },
     {
         "id": 5,
         "name": "Paley European Institute",
         "rating": 4.9,
-        "reviewCount": 320,
         "address": "al. Rzeczypospolitej 1, 02-972 Warszawa",
         "tags": [
             "Rehabilitacja pooperacyjna",
@@ -87,13 +86,13 @@
             "Indywidualne protokoły leczenia"
         ],
         "isPromoted": true,
-        "url": "https://paleyeurope.com"
+        "url": "https://paleyeurope.com",
+        "slug": "paley-european-institute"
     },
     {
         "id": 6,
         "name": "Instytut Pomnik – Centrum Zdrowia Dziecka (Poradnia Rehabilitacji Pediatrycznej)",
         "rating": 4.5,
-        "reviewCount": 920,
         "address": "Aleja Dzieci Polskich 20, 04-730 Warszawa",
         "tags": [
             "Rehabilitacja szpitalna",
@@ -105,13 +104,13 @@
             "Pomoc w najcięższych schorzeniach"
         ],
         "isPromoted": false,
-        "url": "https://www.czd.pl"
+        "url": "https://www.czd.pl",
+        "slug": "instytut-pomnik-centrum-zdrowia-dziecka-poradnia-rehabilitacji-pediatrycznej"
     },
     {
         "id": 7,
         "name": "Mazowieckie Centrum Rehabilitacji STOCER - Ośrodek Rehabilitacji Dzieci i Młodzieży",
         "rating": 4.6,
-        "reviewCount": 530,
         "address": "ul. Ożarowska 75a, 01-444 Warszawa",
         "tags": [
             "Wady postawy",
@@ -123,13 +122,13 @@
             "Terapie w ramach NFZ"
         ],
         "isPromoted": false,
-        "url": "https://stocer.pl"
+        "url": "https://stocer.pl",
+        "slug": "mazowieckie-centrum-rehabilitacji-stocer-osrodek-rehabilitacji-dzieci-i-mlodziezy"
     },
     {
         "id": 8,
         "name": "Instytut Matki i Dziecka - Zakład Usprawniania Leczniczego",
         "rating": 4.6,
-        "reviewCount": 612,
         "address": "ul. Kasprzaka 17a, 01-211 Warszawa",
         "tags": [
             "Rehabilitacja neurologiczna",
@@ -141,13 +140,13 @@
             "Specjalizacja w trudnych przypadkach"
         ],
         "isPromoted": false,
-        "url": "https://imid.med.pl"
+        "url": "https://imid.med.pl",
+        "slug": "instytut-matki-i-dziecka-zaklad-usprawniania-leczniczego"
     },
     {
         "id": 9,
         "name": "Fizjo4Life",
         "rating": 4.9,
-        "reviewCount": 276,
         "address": "ul. Jagiellońska 4, 03-721 Warszawa",
         "tags": [
             "Fizjoterapia ortopedyczna",
@@ -159,13 +158,13 @@
             "Nowoczesne podejście do pacjenta"
         ],
         "isPromoted": false,
-        "url": "https://fizjo4life.pl"
+        "url": "https://fizjo4life.pl",
+        "slug": "fizjo4life"
     },
     {
         "id": 10,
         "name": "Active Place - Klinika Rehabilitacji",
         "rating": 4.8,
-        "reviewCount": 110,
         "address": "ul. Płochocińska 111, 03-044 Warszawa",
         "tags": [
             "Integracja Sensoryczna",
@@ -177,13 +176,13 @@
             "Ciche, spokojne gabinety"
         ],
         "isPromoted": false,
-        "url": "https://active-place.pl"
+        "url": "https://active-place.pl",
+        "slug": "active-place-klinika-rehabilitacji"
     },
     {
         "id": 11,
         "name": "Ośrodek Rehabilitacji Zabajka 2 (Hipomedical 2)",
         "rating": 4.8,
-        "reviewCount": 215,
         "address": "ul. Widokowa 1, 77-400 Złotów",
         "tags": [
             "Innowalk",
@@ -197,13 +196,13 @@
             "Trening FrameRunning"
         ],
         "isPromoted": true,
-        "url": "https://zabajka2.pl"
+        "url": "https://zabajka2.pl",
+        "slug": "osrodek-rehabilitacji-zabajka-2-hipomedical-2"
     },
     {
         "id": 12,
         "name": "Ośrodek Rehabilitacyjno-Wypoczynkowy „Polanika”",
         "rating": 4.6,
-        "reviewCount": 104,
         "address": "ul. Laskowa 95, 26-050 Chrusty",
         "tags": [
             "PNF",
@@ -217,13 +216,13 @@
             "Wsparcie psychologiczne dla rodziców"
         ],
         "isPromoted": false,
-        "url": "https://www.polanika.pl"
+        "url": "https://www.polanika.pl",
+        "slug": "osrodek-rehabilitacyjno-wypoczynkowy-polanika"
     },
     {
         "id": 13,
         "name": "PhysioMedica Centrum Fizjoterapii i Osteopatii",
-        "rating": 5.0,
-        "reviewCount": 53,
+        "rating": 5,
         "address": "ul. Wałuszewska 24 lok. U-1, 03-005 Warszawa",
         "tags": [
             "FITS",
@@ -236,13 +235,13 @@
             "Obsługa pakietów Allianz"
         ],
         "isPromoted": true,
-        "url": "https://physiomedica.pl"
+        "url": "https://physiomedica.pl",
+        "slug": "physiomedica-centrum-fizjoterapii-i-osteopatii"
     },
     {
         "id": 14,
         "name": "Ośrodek Intensywnej Rehabilitacji Dzieci „Michałkowo”",
         "rating": 4.9,
-        "reviewCount": 120,
         "address": "ul. Klimczoka 80, 43-360 Bystra",
         "tags": [
             "NDT-Bobath",
@@ -255,13 +254,13 @@
             "Dogoterapia"
         ],
         "isPromoted": false,
-        "url": "https://michalkowo.pl"
+        "url": "https://michalkowo.pl",
+        "slug": "osrodek-intensywnej-rehabilitacji-dzieci-michalkowo"
     },
     {
         "id": 15,
         "name": "Carolina Medical Center",
         "rating": 4.8,
-        "reviewCount": 74,
         "address": "ul. Pory 78, 02-757 Warszawa",
         "tags": [
             "Ortopedia dziecięca",
@@ -273,13 +272,13 @@
             "Renoma w turystyce medycznej"
         ],
         "isPromoted": true,
-        "url": "https://carolina.pl"
+        "url": "https://carolina.pl",
+        "slug": "carolina-medical-center"
     },
     {
         "id": 16,
         "name": "Ośrodek Rehabilitacji i Hipoterapii Neuron",
         "rating": 4.7,
-        "reviewCount": 89,
         "address": "Małe Gacno 6, 89-505 Małe Gacno",
         "tags": [
             "Terapia Onkologiczna",
@@ -292,13 +291,13 @@
             "Turnusy zimowe"
         ],
         "isPromoted": false,
-        "url": "https://osrodekneuron.pl"
+        "url": "https://osrodekneuron.pl",
+        "slug": "osrodek-rehabilitacji-i-hipoterapii-neuron"
     },
     {
         "id": 17,
         "name": "Klinika Smyka",
         "rating": 4.9,
-        "reviewCount": 108,
         "address": "ul. Lucerny 117, 04-687 Warszawa",
         "tags": [
             "Integracja Sensoryczna",
@@ -309,13 +308,13 @@
             "Przyjazne dzieciom wnętrza"
         ],
         "isPromoted": true,
-        "url": "https://klinikasmyka.pl"
+        "url": "https://klinikasmyka.pl",
+        "slug": "klinika-smyka"
     },
     {
         "id": 18,
         "name": "Be Active - Centrum Rehabilitacji i Osteopatii",
         "rating": 4.7,
-        "reviewCount": 458,
         "address": "ul. Wielicka 76, 30-552 Kraków",
         "tags": [
             "Osteopatia",
@@ -327,13 +326,13 @@
             "Wysoka dostępność specjalistów"
         ],
         "isPromoted": true,
-        "url": "https://www.rehabilitacja-beactive.pl"
+        "url": "https://www.rehabilitacja-beactive.pl",
+        "slug": "be-active-centrum-rehabilitacji-i-osteopatii"
     },
     {
         "id": 19,
         "name": "Centrum Medyczne NeuroTeam",
         "rating": 4.8,
-        "reviewCount": 401,
         "address": "ul. Św. Wawrzyńca 3B/U1, 60-539 Poznań",
         "tags": [
             "Vojta",
@@ -345,13 +344,13 @@
             "Kompleksowa ewaluacja niemowląt"
         ],
         "isPromoted": true,
-        "url": "https://neuroteam.pl"
+        "url": "https://neuroteam.pl",
+        "slug": "centrum-medyczne-neuroteam"
     },
     {
         "id": 20,
         "name": "Centrum Rehabilitacji Jeżyce",
         "rating": 4.9,
-        "reviewCount": 174,
         "address": "ul. Mylna 27/lok.1, 60-856 Poznań",
         "tags": [
             "Kinezyterapia Pediatryczna",
@@ -362,13 +361,13 @@
             "Szybkie terminy konsultacji"
         ],
         "isPromoted": false,
-        "url": "https://crjezyce.pl"
+        "url": "https://crjezyce.pl",
+        "slug": "centrum-rehabilitacji-jezyce"
     },
     {
         "id": 21,
         "name": "Wojewódzki Szpital Rehabilitacyjny dla Dzieci",
         "rating": 4.8,
-        "reviewCount": 86,
         "address": "Ameryka 21, 11-015 Olsztynek",
         "tags": [
             "Rehabilitacja w wodzie",
@@ -379,13 +378,13 @@
             "Pełne zaplecze dietetyczno-logopedyczne"
         ],
         "isPromoted": false,
-        "url": "https://ameryka.com.pl"
+        "url": "https://ameryka.com.pl",
+        "slug": "wojewodzki-szpital-rehabilitacyjny-dla-dzieci"
     },
     {
         "id": 22,
         "name": "R-CITO",
         "rating": 4.9,
-        "reviewCount": 130,
         "address": "ul. Pilotów 3/25, 80-460 Gdańsk",
         "tags": [
             "Rehabilitacja pourazowa",
@@ -396,13 +395,13 @@
             "Gratisowe konsultacje"
         ],
         "isPromoted": true,
-        "url": "https://r-cito.pl"
+        "url": "https://r-cito.pl",
+        "slug": "r-cito"
     },
     {
         "id": 23,
         "name": "Ośrodek Rehabilitacyjny Św. Rafała Archanioła",
-        "rating": 5.0,
-        "reviewCount": 1,
+        "rating": 5,
         "address": "ul. Zielona 23, 42-700 Rusinowice",
         "tags": [
             "Kompleksowa opieka wieloprofilowa",
@@ -413,13 +412,13 @@
             "Zaplecze sakralne i duszpasterskie"
         ],
         "isPromoted": false,
-        "url": "https://rusinowice.com"
+        "url": "https://rusinowice.com",
+        "slug": "osrodek-rehabilitacyjny-sw-rafala-archaniola"
     },
     {
         "id": 24,
         "name": "Fizjo-Pediatria",
         "rating": 4.9,
-        "reviewCount": 52,
         "address": "ul. Ułańska 30, 05-077 Warszawa",
         "tags": [
             "Neurologia dziecięca",
@@ -430,13 +429,13 @@
             "Skupienie na wczesnym etapie rozwoju"
         ],
         "isPromoted": false,
-        "url": "https://fizjopediatria.pl"
+        "url": "https://fizjopediatria.pl",
+        "slug": "fizjo-pediatria"
     },
     {
         "id": 25,
         "name": "Dr Smółka Centrum Medyczne",
         "rating": 4.7,
-        "reviewCount": 45,
         "address": "ul. Ks. J. Skorupki 1C, 32-500 Chrzanów",
         "tags": [
             "FITS",
@@ -447,13 +446,13 @@
             "Wybitna ekspercka wiedza z zakresu wad postawy dr n. med. Katarzyny Smółki"
         ],
         "isPromoted": false,
-        "url": "https://drsmolka.pl"
+        "url": "https://drsmolka.pl",
+        "slug": "dr-smolka-centrum-medyczne"
     },
     {
         "id": 26,
         "name": "Ośrodek Rehabilitacji Dzieci i Młodzieży TRATWA",
         "rating": 4.8,
-        "reviewCount": 35,
         "address": "Steklinek 53A, 87-640 Czernikowo",
         "tags": [
             "NDT-Bobath",
@@ -466,13 +465,13 @@
             "Skupienie na hipoterapii"
         ],
         "isPromoted": false,
-        "url": "https://tratwa.sos.pl"
+        "url": "https://tratwa.sos.pl",
+        "slug": "osrodek-rehabilitacji-dzieci-i-mlodziezy-tratwa"
     },
     {
         "id": 27,
         "name": "Fizjovila Fizjoterapia Daria Strumińska",
-        "rating": 5.0,
-        "reviewCount": 25,
+        "rating": 5,
         "address": "ul. Hermanowska 65/1B, 54-314 Wrocław",
         "tags": [
             "Konsultacje posturalne dzieci",
@@ -483,13 +482,13 @@
             "Wysoki standard analityczny"
         ],
         "isPromoted": false,
-        "url": "https://www.znanylekarz.pl/daria-struminska/fizjoterapeuta-fizjoterapeuta-dzieciecy-osteopata/wroclaw"
+        "url": "https://www.znanylekarz.pl/daria-struminska/fizjoterapeuta-fizjoterapeuta-dzieciecy-osteopata/wroclaw",
+        "slug": "fizjovila-fizjoterapia-daria-struminska"
     },
     {
         "id": 28,
         "name": "FizjoLogica",
         "rating": 4.9,
-        "reviewCount": 172,
         "address": "Osiedle Na Lotnisku 1/U20, 31-801 Kraków",
         "tags": [
             "Fizjoterapia manualna dzieci",
@@ -500,13 +499,13 @@
             "Doświadczenie mgr Dudkowskiej"
         ],
         "isPromoted": false,
-        "url": "https://www.znanylekarz.pl/malgorzata-dudkowska/fizjoterapeuta/krakow"
+        "url": "https://www.znanylekarz.pl/malgorzata-dudkowska/fizjoterapeuta/krakow",
+        "slug": "fizjologica"
     },
     {
         "id": 29,
         "name": "Krakowskie Centrum Fizjoterapii Osteohelp",
         "rating": 4.9,
-        "reviewCount": 80,
         "address": "ul. Limanowskiego 15, 30-551 Kraków",
         "tags": [
             "Osteopatia dziecięca",
@@ -516,13 +515,13 @@
             "Płynna integracja technik osteopatycznych z klasyczną pediatrią"
         ],
         "isPromoted": false,
-        "url": "https://osteohelp.pl"
+        "url": "https://osteohelp.pl",
+        "slug": "krakowskie-centrum-fizjoterapii-osteohelp"
     },
     {
         "id": 30,
         "name": "PoMocne Centrum Terapii",
-        "rating": 5.0,
-        "reviewCount": 28,
+        "rating": 5,
         "address": "Plac Światowida 13a, 60-197 Poznań",
         "tags": [
             "Kompleksowa ocena neurorozwojowa",
@@ -533,13 +532,13 @@
             "Rozległe umiejętności mgr Anny Aleksandrowicz"
         ],
         "isPromoted": false,
-        "url": "https://pomocne-centrum-terapii.localo.site"
+        "url": "https://pomocne-centrum-terapii.localo.site",
+        "slug": "pomocne-centrum-terapii"
     },
     {
         "id": 31,
         "name": "Rehabilitacja dziecięca Piotr Dudzic",
         "rating": 4.9,
-        "reviewCount": 30,
         "address": "ul. Karola Miarki 6-10, 50-306 Wrocław",
         "tags": [
             "Zaawansowana fizjoterapia dziecięca",
@@ -549,6 +548,7 @@
             "Wybitny rynkowy standard konsultacyjny we Wrocławiu"
         ],
         "isPromoted": false,
-        "url": "https://fizjodzieciecy.pl"
+        "url": "https://fizjodzieciecy.pl",
+        "slug": "rehabilitacja-dziecieca-piotr-dudzic"
     }
 ]

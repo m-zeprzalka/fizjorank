@@ -127,7 +127,7 @@ export default function Home() {
                                         <div className="flex flex-wrap items-center gap-3 text-sm text-slate-600 mb-4">
                                             <div className="flex items-center gap-1 font-medium text-slate-900">
                                                 <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                                                {center.rating} <span className="text-slate-400 font-normal">({center.reviewCount})</span>
+                                                {center.rating} <span className="text-slate-400 font-normal"></span>
                                             </div>
                                             <span className="w-1 h-1 rounded-full bg-slate-300 hidden sm:block"></span>
                                             <div className="flex items-center gap-1">

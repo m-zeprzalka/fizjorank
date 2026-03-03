@@ -144,7 +144,7 @@ export default function Home() {
                                                 <div className="flex flex-wrap items-center gap-4 text-sm font-medium">
                                                     <div className="flex items-center gap-1 bg-amber-50 text-amber-700 px-2 py-1 rounded-lg">
                                                         <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                                                        {center.rating} <span className="opacity-70">({center.reviewCount})</span>
+                                                        {center.rating} <span className="opacity-70"></span>
                                                     </div>
                                                     <div className="flex items-center gap-1.5 text-slate-500 bg-slate-50 px-2 py-1 rounded-lg">
                                                         <MapPin className="w-4 h-4 text-slate-400" />

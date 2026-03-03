@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FizjoRank.pl – Ranking Ośrodków Rehabilitacji Dziecięcej
 
-## Getting Started
+> Pomóc rodzicom znaleźć sprawdzoną rehabilitację dla dziecka – szybko i bez stresu.
 
-First, run the development server:
+Obiektywny katalog i ranking najlepszych ośrodków rehabilitacji dziecięcej w Polsce. Zbudowany w Next.js, zoptymalizowany pod SEO organiczne Google.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## Stack
+
+| Warstwa | Technologia |
+|---|---|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| UI | shadcn/ui + Tailwind CSS v4 |
+| Dane | `data/centers.json` – 31 placówek |
+| Język | TypeScript |
+| Package manager | pnpm |
+
+## Struktura
+
+```
+app/
+  layout.tsx          # Root layout, SEO metadata, lang="pl", Inter font
+  page.tsx            # Strona główna – Server Component, JSON-LD
+  sitemap.ts          # → /sitemap.xml (auto-generowany)
+  robots.ts           # → /robots.txt
+  osrodek/[slug]/     # 31 podstron SSG per placówka
+  baza-wiedzy/        # Listing artykułów + 3 artykuły z treścią
+components/
+  RankingSection.tsx  # "use client" – wyszukiwarka + karty ośrodków
+  ui/                 # shadcn/ui components
+data/
+  centers.json        # Dane 31 ośrodków (id, name, slug, rating, ...)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Model danych
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```json
+{
+  "id": 1,
+  "name": "Ośrodek Intensywnej Rehabilitacji Dzieci OLINEK",
+  "slug": "osrodek-intensywnej-rehabilitacji-dzieci-olinek",
+  "rating": 4.9,
+  "address": "ul. Bobrowiecka 9, 00-728 Warszawa",
+  "tags": ["NDT-Bobath", "Kombinezony TheraSuit", "Integracja Sensoryczna"],
+  "pros": ["Najnowocześniejszy sprzęt", "Intensywne turnusy rehabilitacyjne"],
+  "isPromoted": true,
+  "url": "https://olinek.com.pl"
+}
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Uruchomienie
 
-## Learn More
+```bash
+pnpm install
+pnpm dev        # http://localhost:3000
+pnpm build      # build produkcyjny (46 stron)
+pnpm lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+> **Turbopack cache issue**: W razie błędów panics/SST usuń `rm -rf .next` i uruchom ponownie.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Architektura SEO
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Element | Implementacja |
+|---|---|
+| Metadata | `layout.tsx` – title, desc, OG, Twitter, canonical |
+| `lang="pl"` | `layout.tsx` HTML attribute |
+| Structured Data | JSON-LD `ItemList` + `MedicalBusiness` per strona |
+| Server Rendering | `page.tsx` jest Server Component (treść w HTML) |
+| Sitemap | `app/sitemap.ts` → `/sitemap.xml` (46 URL-i) |
+| robots.txt | `app/robots.ts` |
+| Slug-based URLs | `/osrodek/fizjo4life`, `/osrodek/carolina-medical-center` |
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Jeden kontener używany wszędzie: `max-w-6xl mx-auto px-6`  
+Wyjątek: hero sekcja – `text-center` (jedyny element wycentrowany)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+Vercel → branch `main` → auto-deploy.  
+Po deploy: prześlij `sitemap.xml` do Google Search Console.
