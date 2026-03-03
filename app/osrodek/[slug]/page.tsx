@@ -1,7 +1,9 @@
 import centersData from "@/data/centers.json";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { Activity, MapPin, Star, Check, ChevronLeft, ExternalLink, Tag } from "lucide-react";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { MapPin, Star, Check, ChevronLeft, ExternalLink, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 
@@ -43,17 +45,7 @@ export default async function CenterPage({ params }: { params: Params }) {
         <div className="min-h-screen bg-white text-slate-900">
             <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-            {/* NAV */}
-            <nav className="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-                <div className="max-w-6xl mx-auto px-6 h-16 flex items-center gap-4">
-                    <Link href="/" className="flex items-center gap-2">
-                        <Activity className="text-blue-600 w-6 h-6" />
-                        <span className="font-semibold text-xl tracking-tight text-slate-900">
-                            FizjoRank<span className="text-blue-600">.</span>
-                        </span>
-                    </Link>
-                </div>
-            </nav>
+            <Navbar />
 
             {/* CONTENT */}
             <main className="max-w-6xl mx-auto px-6 py-12">
@@ -131,6 +123,8 @@ export default async function CenterPage({ params }: { params: Params }) {
                     </Link>
                 </div>
             </main>
+
+            <Footer />
         </div>
     );
 }

@@ -33,6 +33,14 @@ export const metadata: Metadata = {
       "Obiektywny ranking najlepszych ośrodków rehabilitacji dzieci w Polsce. Porównaj metody terapii i znajdź najlepszą placówkę.",
     url: "https://fizjorank.pl",
     siteName: "FizjoRank",
+    images: [
+      {
+        url: "https://fizjorank.pl/og.png",
+        width: 1200,
+        height: 630,
+        alt: "FizjoRank – Ranking Ośrodków Rehabilitacji Dziecięcej",
+      },
+    ],
     locale: "pl_PL",
     type: "website",
   },
@@ -41,6 +49,7 @@ export const metadata: Metadata = {
     title: "FizjoRank – Ranking Ośrodków Rehabilitacji Dziecięcej",
     description:
       "Obiektywny ranking najlepszych ośrodków rehabilitacji dzieci w Polsce.",
+    images: ["https://fizjorank.pl/og.png"],
   },
   alternates: {
     canonical: "https://fizjorank.pl",

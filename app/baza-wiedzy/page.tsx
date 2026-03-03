@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Activity, ChevronLeft, Star, MapPin, ChevronRight } from "lucide-react";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { ChevronRight } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -35,21 +37,7 @@ const articles = [
 export default function BazaWiedzyPage() {
     return (
         <div className="min-h-screen bg-white text-slate-900">
-            {/* NAV */}
-            <nav className="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-                <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <Link href="/" className="flex items-center gap-2">
-                        <Activity className="text-blue-600 w-6 h-6" />
-                        <span className="font-semibold text-xl tracking-tight text-slate-900">
-                            FizjoRank<span className="text-blue-600">.</span>
-                        </span>
-                    </Link>
-                    <div className="hidden md:flex gap-6 text-sm font-medium text-slate-500">
-                        <Link href="/" className="hover:text-slate-900 transition-colors">Ranking</Link>
-                        <Link href="/baza-wiedzy" className="text-slate-900 font-semibold">Baza Wiedzy</Link>
-                    </div>
-                </div>
-            </nav>
+            <Navbar />
 
             {/* HEADER */}
             <header className="bg-slate-50/50 border-b border-slate-100">
@@ -89,15 +77,7 @@ export default function BazaWiedzyPage() {
                 </div>
             </main>
 
-            {/* FOOTER */}
-            <footer className="bg-white border-t border-slate-100">
-                <div className="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
-                    <Link href="/" className="inline-flex items-center gap-1.5 text-sm text-slate-500 hover:text-slate-900 transition-colors">
-                        <ChevronLeft className="w-4 h-4" /> Wróć do rankingu
-                    </Link>
-                    <span className="text-xs text-slate-400">FizjoRank © 2026</span>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }
