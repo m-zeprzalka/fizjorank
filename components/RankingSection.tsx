@@ -167,7 +167,7 @@ export default function RankingSection({ centers }: { centers: Center[] }) {
                                             <Button
                                                 variant="ghost"
                                                 className={`w-full justify-between h-12 px-4 rounded-xl border font-medium transition-all ${isGold
-                                                    ? "bg-blue-600 text-white hover:bg-blue-700 border-blue-600"
+                                                    ? "bg-blue-600 text-white hover:bg-blue-700 border-blue-600 hover:text-white"
                                                     : "bg-white text-slate-900 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
                                                     }`}
                                             >
