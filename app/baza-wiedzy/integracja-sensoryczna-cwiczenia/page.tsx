@@ -1,55 +1,27 @@
 import Link from "next/link";
-import { Activity, ChevronLeft, Star, MapPin, ChevronRight } from "lucide-react";
+import { ChevronLeft, Star, MapPin, ChevronRight, Check } from "lucide-react";
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
+import centersData from "@/data/centers.json";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
     title: "Integracja Sensoryczna: ćwiczenia w domu – FizjoRank",
     description:
         "Jak wspierać układ sensoryczny dziecka na co dzień? Praktyczne ćwiczenia integracji sensorycznej dla rodziców – bez specjalistycznego sprzętu.",
     alternates: {
-        canonical:
-            "https://fizjorank.pl/baza-wiedzy/integracja-sensoryczna-cwiczenia",
+        canonical: "https://fizjorank.pl/baza-wiedzy/integracja-sensoryczna-cwiczenia",
     },
 };
 
-const recommendedCenters = [
-    {
-        id: 3,
-        name: "Ośrodek Rehabilitacji Biomicus",
-        rating: 4.8,
-        address: "ul. Pańska 96, Warszawa",
-        tags: ["Integracja Sensoryczna", "Logopedia"],
-    },
-    {
-        id: 10,
-        name: "Active Place – Klinika Rehabilitacji",
-        rating: 4.8,
-        address: "ul. Płochocińska 111, Warszawa",
-        tags: ["Integracja Sensoryczna", "Terapia czaszkowo-krzyżowa"],
-    },
-    {
-        id: 17,
-        name: "Klinika Smyka",
-        rating: 4.9,
-        address: "ul. Lucerny 117, Warszawa",
-        tags: ["Integracja Sensoryczna", "Fizjoterapia Niemowląt"],
-    },
-];
+const recommendedIds = [3, 10, 17];
+const recommendedCenters = centersData.filter((c) => recommendedIds.includes(c.id));
 
 export default function Article() {
     return (
         <div className="min-h-screen bg-white text-slate-900">
-            <nav className="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-                <div className="max-w-6xl mx-auto px-6 h-16 flex items-center gap-4">
-                    <Link href="/" className="flex items-center gap-2">
-                        <Activity className="text-blue-600 w-6 h-6" />
-                        <span className="font-semibold text-xl tracking-tight text-slate-900">
-                            FizjoRank<span className="text-blue-600">.</span>
-                        </span>
-                    </Link>
-                </div>
-            </nav>
+            <Navbar />
 
             <main className="max-w-6xl mx-auto px-6 py-12">
                 <div className="max-w-3xl mx-auto">
@@ -80,14 +52,12 @@ export default function Article() {
                             Czym jest Integracja Sensoryczna?
                         </h2>
                         <p>
-                            Integracja Sensoryczna (SI) to proces, dzięki któremu mózg
-                            odbiera, przetwarza i organizuje informacje z zmysłów: dotyku,
-                            równowagi, propriocepcji (czucia głębokiego), wzroku, słuchu,
-                            smaku i węchu. Gdy ten proces przebiega nieprawidłowo, mówimy o
-                            zaburzeniach integracji sensorycznej (SPD – Sensory Processing
-                            Disorder).
+                            Integracja Sensoryczna (SI) to proces, dzięki któremu mózg odbiera,
+                            przetwarza i organizuje informacje z zmysłów: dotyku, równowagi,
+                            propriocepcji (czucia głębokiego), wzroku, słuchu, smaku i węchu.
+                            Gdy ten proces przebiega nieprawidłowo, mówimy o zaburzeniach
+                            integracji sensorycznej (SPD – Sensory Processing Disorder).
                         </p>
-
                         <h2 className="text-xl font-semibold text-slate-900 mt-10 mb-4">
                             Sygnały zaburzeń SI u dziecka
                         </h2>
@@ -106,11 +76,9 @@ export default function Article() {
                                 </li>
                             ))}
                         </ul>
-
                         <h2 className="text-xl font-semibold text-slate-900 mt-10 mb-4">
                             Ćwiczenia, które możesz robić w domu
                         </h2>
-
                         <div className="space-y-4">
                             {[
                                 {
@@ -144,26 +112,20 @@ export default function Article() {
                                     className="bg-slate-50 rounded-xl p-5 border border-slate-200"
                                 >
                                     <div className="flex items-start justify-between gap-4 mb-2">
-                                        <h3 className="font-semibold text-slate-900">
-                                            {exercise.title}
-                                        </h3>
+                                        <h3 className="font-semibold text-slate-900">{exercise.title}</h3>
                                         <span className="text-xs font-medium text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full whitespace-nowrap shrink-0">
                                             {exercise.age}
                                         </span>
                                     </div>
-                                    <p className="text-sm text-slate-600 leading-relaxed">
-                                        {exercise.desc}
-                                    </p>
+                                    <p className="text-sm text-slate-600 leading-relaxed">{exercise.desc}</p>
                                 </div>
                             ))}
                         </div>
-
                         <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 mt-8">
                             <p className="text-sm text-amber-800 font-medium">
                                 ⚠️ Ważne: Ćwiczenia domowe są uzupełnieniem, nie zastąpieniem
                                 terapii specjalistycznej. Jeśli podejrzewasz u dziecka zaburzenia
-                                SI – umów wizytę u certyfikowanego terapeuty integracji
-                                sensorycznej.
+                                SI – umów wizytę u certyfikowanego terapeuty integracji sensorycznej.
                             </p>
                         </div>
                     </div>
@@ -179,33 +141,70 @@ export default function Article() {
                         </p>
                         <div className="space-y-4">
                             {recommendedCenters.map((center) => (
-                                <Link
+                                <div
                                     key={center.id}
-                                    href={`/osrodek/${center.id}`}
-                                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white rounded-xl p-5 border border-slate-200 hover:border-blue-200 hover:shadow-sm transition-all group"
+                                    className="bg-white rounded-2xl border border-slate-200 p-6 hover:border-blue-300 hover:shadow-md transition-all"
                                 >
-                                    <div>
-                                        <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
-                                            {center.name}
-                                        </h3>
-                                        <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
-                                            <span className="flex items-center gap-1">
-                                                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                                                {center.rating}
-                                            </span>
-                                            <span className="flex items-center gap-1">
-                                                <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                                                {center.address}
-                                            </span>
+                                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
+                                        <div className="shrink-0">
+                                            <div className="w-10 h-10 rounded-xl flex items-center justify-center font-semibold text-base text-slate-400 bg-slate-50 border border-slate-100">
+                                                {center.id}
+                                            </div>
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <a
+                                                href={center.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer nofollow"
+                                                className="text-lg font-semibold text-slate-900 hover:text-blue-600 transition-colors"
+                                            >
+                                                {center.name}
+                                            </a>
+                                            <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 my-2">
+                                                <div className="flex items-center gap-1.5">
+                                                    <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                                                    <span className="text-slate-700">{center.rating}</span>
+                                                </div>
+                                                <div className="flex items-center gap-1.5">
+                                                    <MapPin className="w-4 h-4 text-slate-400" />
+                                                    {center.address}
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-wrap gap-2 mb-4">
+                                                {center.tags.map((tag: string) => (
+                                                    <span
+                                                        key={tag}
+                                                        className="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-medium rounded-md border border-slate-200"
+                                                    >
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <ul className="space-y-1.5 mb-4">
+                                                {center.pros.slice(0, 2).map((pro: string) => (
+                                                    <li key={pro} className="flex items-start gap-2 text-sm text-slate-600">
+                                                        <Check className="w-4 h-4 text-blue-500 mt-0.5 shrink-0 stroke-[3]" />
+                                                        {pro}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <a href={center.url} target="_blank" rel="noopener noreferrer nofollow">
+                                                <Button
+                                                    variant="ghost"
+                                                    className="justify-between h-11 px-4 rounded-xl border border-slate-200 bg-white text-slate-900 hover:border-slate-300 hover:bg-slate-50 font-medium transition-all"
+                                                >
+                                                    <span>Strona placówki</span>
+                                                    <ChevronRight className="w-4 h-4 opacity-50 ml-2" />
+                                                </Button>
+                                            </a>
                                         </div>
                                     </div>
-                                    <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-blue-500 transition-colors shrink-0" />
-                                </Link>
+                                </div>
                             ))}
                         </div>
                         <Link
-                            href="/"
-                            className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 mt-4 font-medium"
+                            href="/#ranking"
+                            className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 mt-6 font-medium"
                         >
                             Zobacz pełny ranking <ChevronRight className="w-4 h-4" />
                         </Link>

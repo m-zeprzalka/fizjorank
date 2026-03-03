@@ -66,7 +66,7 @@ export default function Home() {
             <ShieldCheck className="w-4 h-4" />
             Zweryfikowane Najlepsze Ośrodki
           </div>
-          <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 mb-6 leading-[1.15]">
+          <h1 className="text-4xl md:text-6xl font-semibold md:font-bold tracking-tight text-slate-900 mb-6 leading-[1.15]">
             Znajdź sprawdzoną <br className="hidden md:block" />
             <span className="text-blue-600">rehabilitację</span> dla dziecka
           </h1>

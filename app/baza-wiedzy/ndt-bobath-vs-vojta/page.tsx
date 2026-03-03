@@ -1,7 +1,10 @@
 import Link from "next/link";
-import { Activity, ChevronLeft, Star, MapPin, ChevronRight } from "lucide-react";
+import { ChevronLeft, Star, MapPin, ChevronRight, Check } from "lucide-react";
 import type { Metadata } from "next";
 import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
+import centersData from "@/data/centers.json";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
     title: "NDT-Bobath a Vojta – różnice i wskazania – FizjoRank",
@@ -12,43 +15,13 @@ export const metadata: Metadata = {
     },
 };
 
-const recommendedCenters = [
-    {
-        id: 1,
-        name: "Ośrodek Intensywnej Rehabilitacji Dzieci OLINEK",
-        rating: 4.9,
-        address: "ul. Bobrowiecka 9, Warszawa",
-        tags: ["NDT-Bobath", "Kombinezony TheraSuit"],
-    },
-    {
-        id: 2,
-        name: "Ośrodek Rehabilitacji Amicus",
-        rating: 4.8,
-        address: "ul. Słowackiego 12, Warszawa",
-        tags: ["Metoda Vojty", "NDT-Bobath"],
-    },
-    {
-        id: 19,
-        name: "Centrum Medyczne NeuroTeam",
-        rating: 4.8,
-        address: "ul. Św. Wawrzyńca 3B/U1, Poznań",
-        tags: ["Vojta", "NDT-Bobath Baby"],
-    },
-];
+const recommendedIds = [1, 2, 19];
+const recommendedCenters = centersData.filter((c) => recommendedIds.includes(c.id));
 
 export default function Article() {
     return (
         <div className="min-h-screen bg-white text-slate-900">
-            <nav className="border-b border-slate-100 bg-white/80 backdrop-blur-md sticky top-0 z-50">
-                <div className="max-w-6xl mx-auto px-6 h-16 flex items-center gap-4">
-                    <Link href="/" className="flex items-center gap-2">
-                        <Activity className="text-blue-600 w-6 h-6" />
-                        <span className="font-semibold text-xl tracking-tight text-slate-900">
-                            FizjoRank<span className="text-blue-600">.</span>
-                        </span>
-                    </Link>
-                </div>
-            </nav>
+            <Navbar />
 
             <main className="max-w-6xl mx-auto px-6 py-12">
                 <div className="max-w-3xl mx-auto">
@@ -69,8 +42,7 @@ export default function Article() {
                         </h1>
                         <p className="text-lg text-slate-500 font-light leading-relaxed">
                             Dwie metody, jedno pytanie rodziców: którą wybrać dla mojego
-                            dziecka? Wyjaśniamy różnice, wskazania i praktyczne aspekty obu
-                            podejść.
+                            dziecka? Wyjaśniamy różnice, wskazania i praktyczne aspekty obu podejść.
                         </p>
                     </div>
 
@@ -81,34 +53,31 @@ export default function Article() {
                         <p>
                             Metoda NDT-Bobath (Neurodevelopmental Treatment) to podejście
                             terapeutyczne opracowane przez Bertha i Karel Bobath w latach 40.
-                            XX wieku. Opiera się na stymulowaniu prawidłowych wzorców
-                            ruchowych poprzez handling – specyficzny sposób trzymania,
-                            prowadzenia i stymulowania dziecka. Terapeuta aktywnie uczestniczy
-                            w ruchu, pomagając dziecku odczuć prawidłowe wzorce.
+                            XX wieku. Opiera się na stymulowaniu prawidłowych wzorców ruchowych
+                            poprzez handling – specyficzny sposób trzymania, prowadzenia i
+                            stymulowania dziecka. Terapeuta aktywnie uczestniczy w ruchu, pomagając
+                            dziecku odczuć prawidłowe wzorce.
                         </p>
                         <p>
-                            NDT-Bobath jest niezwykle elastycznym podejściem –
-                            terapeuta dostosowuje techniki do bieżącego stanu i potrzeb
-                            dziecka. Terapia jest dla dzieci stosunkowo komfortowa, co
-                            sprzyja współpracy.
+                            NDT-Bobath jest niezwykle elastycznym podejściem – terapeuta dostosowuje
+                            techniki do bieżącego stanu i potrzeb dziecka. Terapia jest dla dzieci
+                            stosunkowo komfortowa, co sprzyja współpracy.
                         </p>
-
                         <h2 className="text-xl font-semibold text-slate-900 mt-10 mb-4">
                             Co to jest metoda Vojty?
                         </h2>
                         <p>
                             Metoda Vojty (Terapia Vojty) to system diagnostyczno-terapeutyczny
                             stworzony przez czeskiego neurologa Václava Vojtę. Opiera się na
-                            aktywacji wrodzonych, globalnych wzorców lokomocji (odruchów)
-                            poprzez ucisk na precyzyjnie określone strefy ciała w pozycjach
-                            leżenia na brzuchu, plecach lub na boku.
+                            aktywacji wrodzonych, globalnych wzorców lokomocji (odruchów) poprzez
+                            ucisk na precyzyjnie określone strefy ciała w pozycjach leżenia na
+                            brzuchu, plecach lub na boku.
                         </p>
                         <p>
                             Metoda Vojty wymaga dużego wysiłku od dziecka – stymulacja bywa
-                            intensywna i może wywoływać płacz. To normalna reakcja układu
-                            nerwowego, a nie objaw bólu.
+                            intensywna i może wywoływać płacz. To normalna reakcja układu nerwowego,
+                            a nie objaw bólu.
                         </p>
-
                         <h2 className="text-xl font-semibold text-slate-900 mt-10 mb-4">
                             Porównanie metod
                         </h2>
@@ -137,7 +106,6 @@ export default function Article() {
                                 </div>
                             ))}
                         </div>
-
                         <h2 className="text-xl font-semibold text-slate-900 mt-10 mb-4">
                             Którą metodę wybrać?
                         </h2>
@@ -146,8 +114,7 @@ export default function Article() {
                             dziecięcego lub fizjoterapeuty po pełnej ocenie stanu dziecka.
                             W praktyce obie metody często stosuje się łącznie lub zmienia
                             w zależności od etapu terapii. Nie ma jednej &ldquo;lepszej&rdquo; metody –
-                            jest metoda właściwa dla danego dziecka, w danym momencie jego
-                            rozwoju.
+                            jest metoda właściwa dla danego dziecka, w danym momencie jego rozwoju.
                         </p>
                     </div>
 
@@ -162,33 +129,70 @@ export default function Article() {
                         </p>
                         <div className="space-y-4">
                             {recommendedCenters.map((center) => (
-                                <Link
+                                <div
                                     key={center.id}
-                                    href={`/osrodek/${center.id}`}
-                                    className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white rounded-xl p-5 border border-slate-200 hover:border-blue-200 hover:shadow-sm transition-all group"
+                                    className="bg-white rounded-2xl border border-slate-200 p-6 hover:border-blue-300 hover:shadow-md transition-all"
                                 >
-                                    <div>
-                                        <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-1">
-                                            {center.name}
-                                        </h3>
-                                        <div className="flex flex-wrap items-center gap-3 text-sm text-slate-500">
-                                            <span className="flex items-center gap-1">
-                                                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                                                {center.rating}
-                                            </span>
-                                            <span className="flex items-center gap-1">
-                                                <MapPin className="w-3.5 h-3.5 text-slate-400" />
-                                                {center.address}
-                                            </span>
+                                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
+                                        <div className="shrink-0">
+                                            <div className="w-10 h-10 rounded-xl flex items-center justify-center font-semibold text-base text-slate-400 bg-slate-50 border border-slate-100">
+                                                {center.id}
+                                            </div>
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <a
+                                                href={center.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer nofollow"
+                                                className="text-lg font-semibold text-slate-900 hover:text-blue-600 transition-colors"
+                                            >
+                                                {center.name}
+                                            </a>
+                                            <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 my-2">
+                                                <div className="flex items-center gap-1.5">
+                                                    <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
+                                                    <span className="text-slate-700">{center.rating}</span>
+                                                </div>
+                                                <div className="flex items-center gap-1.5">
+                                                    <MapPin className="w-4 h-4 text-slate-400" />
+                                                    {center.address}
+                                                </div>
+                                            </div>
+                                            <div className="flex flex-wrap gap-2 mb-4">
+                                                {center.tags.map((tag: string) => (
+                                                    <span
+                                                        key={tag}
+                                                        className="px-2.5 py-1 bg-slate-50 text-slate-600 text-xs font-medium rounded-md border border-slate-200"
+                                                    >
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            <ul className="space-y-1.5 mb-4">
+                                                {center.pros.slice(0, 2).map((pro: string) => (
+                                                    <li key={pro} className="flex items-start gap-2 text-sm text-slate-600">
+                                                        <Check className="w-4 h-4 text-blue-500 mt-0.5 shrink-0 stroke-[3]" />
+                                                        {pro}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                            <a href={center.url} target="_blank" rel="noopener noreferrer nofollow">
+                                                <Button
+                                                    variant="ghost"
+                                                    className="justify-between h-11 px-4 rounded-xl border border-slate-200 bg-white text-slate-900 hover:border-slate-300 hover:bg-slate-50 font-medium transition-all"
+                                                >
+                                                    <span>Strona placówki</span>
+                                                    <ChevronRight className="w-4 h-4 opacity-50 ml-2" />
+                                                </Button>
+                                            </a>
                                         </div>
                                     </div>
-                                    <ChevronRight className="w-5 h-5 text-slate-400 group-hover:text-blue-500 transition-colors shrink-0" />
-                                </Link>
+                                </div>
                             ))}
                         </div>
                         <Link
-                            href="/"
-                            className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 mt-4 font-medium"
+                            href="/#ranking"
+                            className="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-700 mt-6 font-medium"
                         >
                             Zobacz pełny ranking <ChevronRight className="w-4 h-4" />
                         </Link>
