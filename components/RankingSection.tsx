@@ -39,7 +39,7 @@ export default function RankingSection({ centers }: { centers: Center[] }) {
             {/* Search bar */}
             <div className="border-b border-slate-100 bg-slate-50/60">
                 <div className="max-w-6xl mx-auto px-6 py-8">
-                    <div className="relative max-w-2xl">
+                    <div className="relative mx-auto max-w-2xl">
                         <div className="absolute inset-y-0 left-5 flex items-center pointer-events-none">
                             <Search className="w-5 h-5 text-slate-400" />
                         </div>
@@ -157,8 +157,8 @@ export default function RankingSection({ centers }: { centers: Center[] }) {
                                         <Button
                                             variant="ghost"
                                             className={`w-full justify-between h-12 px-4 rounded-xl border font-medium transition-all ${isGold
-                                                    ? "bg-blue-600 text-white hover:bg-blue-700 border-blue-600"
-                                                    : "bg-white text-slate-900 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
+                                                ? "bg-blue-600 text-white hover:bg-blue-700 border-blue-600"
+                                                : "bg-white text-slate-900 border-slate-200 hover:border-slate-300 hover:bg-slate-50"
                                                 }`}
                                         >
                                             <span className="flex items-center gap-2">

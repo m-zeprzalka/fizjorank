@@ -79,7 +79,7 @@ export default function Home() {
             <a href="#" className="hover:text-slate-900 transition-colors">Dla Specjalistów</a>
           </div>
           <button className="rounded-full text-sm font-medium border border-slate-200 px-4 py-2 hover:bg-slate-50 transition-colors">
-            Zgłoś placówkę
+            <Link href="#">Zobacz ranking</Link>
           </button>
         </div>
       </nav>
