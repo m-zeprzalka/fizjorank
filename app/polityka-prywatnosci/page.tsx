@@ -12,7 +12,7 @@ const sections = [
     {
         title: "1. Administrator danych osobowych",
         content:
-            "Administratorem danych osobowych jest Michał Zeprzałka, prowadzący serwis FizjoRank.pl. Kontakt: m@zeprzalka.pl, tel. 668 184 614.",
+            "Administratorem danych osobowych jest Administrator serwisu FizjoRank.pl. Kontakt: kontakt@fizjorank.pl",
     },
     {
         title: "2. Zakres zbieranych danych",

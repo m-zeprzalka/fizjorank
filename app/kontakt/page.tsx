@@ -34,7 +34,7 @@ export default function KontaktPage() {
                                 </div>
                                 <div>
                                     <p className="text-xs text-slate-500 font-medium uppercase tracking-wider mb-0.5">Właściciel</p>
-                                    <p className="text-slate-900 font-medium">Michał Zeprzałka</p>
+                                    <p className="text-slate-900 font-medium">Administrator</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -43,8 +43,8 @@ export default function KontaktPage() {
                                 </div>
                                 <div>
                                     <p className="text-xs text-slate-500 font-medium uppercase tracking-wider mb-0.5">E-mail</p>
-                                    <a href="mailto:m@zeprzalka.pl" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">
-                                        m@zeprzalka.pl
+                                    <a href="mailto:kontakt@fizjorank.pl" className="text-blue-600 hover:text-blue-700 font-medium transition-colors">
+                                        kontakt@fizjorank.pl
                                     </a>
                                 </div>
                             </div>
@@ -54,8 +54,8 @@ export default function KontaktPage() {
                                 </div>
                                 <div>
                                     <p className="text-xs text-slate-500 font-medium uppercase tracking-wider mb-0.5">Telefon</p>
-                                    <a href="tel:+48668184614" className="text-slate-900 font-medium hover:text-blue-600 transition-colors">
-                                        668 184 614
+                                    <a href="tel:+48000000000" className="text-slate-900 font-medium hover:text-blue-600 transition-colors">
+                                        000 000 000
                                     </a>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@ export default function KontaktPage() {
                             adresem i krótkim opisem placówki. Po weryfikacji dodamy ją do bazy.
                         </p>
                         <a
-                            href="mailto:m@zeprzalka.pl?subject=Zgłoszenie placówki – FizjoRank"
+                            href="mailto:kontakt@fizjorank.pl?subject=Zgłoszenie placówki – FizjoRank"
                             className="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-semibold rounded-xl px-5 py-3 hover:bg-blue-700 transition-colors"
                         >
                             <Mail className="w-4 h-4" />
